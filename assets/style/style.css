@@ -29,15 +29,15 @@ nav {
     position: relative;
 }
 
-/* Ajuste da logo */
 .logo {
     position: absolute;
-    left: 10px; /* Mantém a logo à esquerda */
+    left: 20px; /* Ajuste conforme necessário */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
 }
 
 .nav-logo {
-    margin-top: 10px;
-    height: 80px;
+    height: 80px; /* Ajuste o tamanho conforme necessário */
     border-radius: 100%;
 }
 
