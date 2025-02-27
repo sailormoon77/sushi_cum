@@ -26,16 +26,14 @@ header {
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     position: relative;
 }
 
 .logo {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
 }
 
 .nav-logo {
@@ -43,9 +41,8 @@ nav {
     border-radius: 100%;
 }
 
-
 /* Centralizando os links do menu */
-nav ul {
+.nav-list {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -53,11 +50,11 @@ nav ul {
     padding: 10px 0;
 }
 
-nav ul li {
+.nav-list li {
     display: inline;
 }
 
-nav ul li a {
+.nav-list li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -66,9 +63,23 @@ nav ul li a {
     font-size: 25px;
 }
 
-nav ul li a:hover {
+.nav-list li a:hover {
     background-color: #c8568b;
     border-radius: 5px;
+}
+
+/* Menu de Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
 }
 
 /* ======== Conteúdo Principal ======== */
@@ -88,7 +99,7 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-h1{
+h1 {
     font-size: 20px;
 }
 
@@ -122,21 +133,116 @@ footer {
     margin-top: auto;
 }
 
+
+/* Menu lateral (off-canvas) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido por padrão */
+    width: 250px;
+    height: 100vh;
+    background-color: #FFAEB9;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1100;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* Botão de fechar */
+.close-btn {
+    align-self: flex-end;
+    margin-right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Estilizando a lista do menu lateral */
+.sidebar .nav-list {
+    flex-direction: column;
+    display: flex;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar .nav-list li {
+    padding: 10px;
+    text-align: left;
+}
+
+.sidebar .nav-list li a {
+    color: white;
+    font-size: 22px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .nav-list li a:hover {
+    background-color: #c8568b;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+/* Fundo escuro ao abrir o menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Ajustando cabeçalho */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+}
+
+
 /* ======== Responsividade ======== */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+    .menu-toggle {
+        display: flex;
     }
 
-    .log {
-        position: static;
-        margin-bottom: 10px;
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #FFAEB9;
+        position: absolute;
+        top: 100px; /* Abaixo da navbar */
+        left: 0;
+        padding: 10px 0;
+        z-index: 1000; /* Garante que o menu fique acima de outros elementos */
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
     }
 
     .container {
@@ -149,7 +255,7 @@ footer {
         padding: 10px;
     }
 
-    nav ul {
+    .nav-list {
         gap: 5px;
     }
 
@@ -159,5 +265,16 @@ footer {
 
     footer {
         padding: 10px;
+    }
+}
+
+/* Exibir menu normalmente em telas maiores */
+@media (min-width: 769px) {
+    .nav-list {
+        display: flex !important; /* Garante que o menu sempre apareça */
+    }
+
+    .menu-toggle {
+        display: none; /* Esconde o menu hamburguer */
     }
 }
