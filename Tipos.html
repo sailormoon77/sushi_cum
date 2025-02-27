@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Sushi</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+       
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sushi-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .sushi-item {
+            text-decoration: none;
+            position: relative;
+            width: 300px;
+            height: 250px;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            color: inherit;
+        }
+        .sushi-item:hover {
+            transform: scale(1.05);
+        }
+        .sushi-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        .sushi-item:hover img {
+            filter: brightness(30%);
+        }
+        .sushi-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .sushi-item:hover .overlay {
+            opacity: 1;
+        }
+        .sushi-info {
+            padding: 10px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">
+                <img src="./assets/img/Untitled_logo_2_free-file.jpg" alt="Logo Sushi" class="nav-logo">
+            </a>
+            <ul>
+                <li><a href="/index.html">Historia do sushi</a></li>
+                <li><a href="/Tipos.html">Tipos de Sushi</a></li>
+                <li><a href="/Hashi.html">Como usar Hashis</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="sushi-container">
+        <a href="Nigiri.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Nigiri">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Nigiri</h3>
+                <p>Uma fatia de peixe sobre arroz.</p>
+            </div>
+        </a>
+        <a href="Maki.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Maki">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Maki</h3>
+                <p>Rolo de arroz e peixe envolto em alga.</p>
+            </div>
+        </a>
+        <a href="Temaki.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Temaki">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Temaki</h3>
+                <p>Rolo grande em formato de cone.</p>
+            </div>
+        </a>
+        <a href="Uramaki.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Uramaki">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Uramaki</h3>
+                <p>Rolo invertido com arroz por fora.</p>
+            </div>
+        </a>
+        <a href="Hosomaki.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Hosomaki">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Hosomaki</h3>
+                <p>Rolinhos finos com um único recheio.</p>
+            </div>
+        </a>
+        <a href="Futomaki.html" class="sushi-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jeIEITMsvyGpxm4r-jyRqwHaFE%26pid%3DApi&f=1&ipt=dbba33ce24cba04cd9557725b3da6aaf460daef94cb73543385fa06b54cef173&ipo=images" alt="Futomaki">
+            <div class="overlay">Ver sobre</div>
+            <div class="sushi-info">
+                <h3>Futomaki</h3>
+                <p>Rolos mais grossos e bem recheados.</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tipos de Sushi - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+    

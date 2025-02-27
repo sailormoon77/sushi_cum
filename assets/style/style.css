@@ -1,0 +1,154 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F5F5F5; /* Fundo claro (arroz) */
+}
+
+/* ======== Cabeçalho e Navegação ======== */
+header {
+    background: linear-gradient(135deg, #8B6BEE, #B08AEB, #B792EA);
+    padding: 15px;
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza os itens */
+    gap: 50px; /* Espaço entre logo e menu */
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* Ajuste da logo */
+.logo {
+    position: absolute;
+    left: 10px; /* Mantém a logo à esquerda */
+}
+
+.nav-logo {
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+/* Centralizando os links do menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(135deg, #8B6BEE, #B08AEB, #B792EA);
+    border-radius: 5px;
+}
+
+/* ======== Conteúdo Principal ======== */
+.container {
+    flex: 1;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #161c1b; /* Barra lateral verde (wasabi) */
+}
+
+h1, h2 {
+    color: #000000; /* Vermelho (atum) */
+    margin-bottom: 15px;
+}
+
+h1{
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ======== Imagens ======== */
+.featured-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 3px solid #000000; /* Borda verde (wasabi) */
+    /* height: 500px; */
+}
+
+/* ======== Rodapé ======== */
+footer {
+    background: #37D243;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+/* ======== Responsividade ======== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .log {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
