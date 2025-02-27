@@ -25,6 +25,7 @@ header {
 
 nav {
     display: flex;
+    justify-content: center;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -80,57 +81,6 @@ nav {
     height: 3px;
     background-color: white;
     margin: 4px 0;
-}
-
-/* ======== Conteúdo Principal ======== */
-.container {
-    flex: 1;
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-left: 8px solid #161c1b; /* Barra lateral verde (wasabi) */
-}
-
-h1, h2 {
-    color: #000000; /* Vermelho (atum) */
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 20px;
-}
-
-p {
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Adiciona espaçamento superior e inferior para todas as listas */
-ol, ul {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-/* ======== Imagens ======== */
-.featured-image {
-    width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
-    border: 3px solid #000000; /* Borda verde (wasabi) */
-    /* height: 500px; */
-}
-
-/* ======== Rodapé ======== */
-footer {
-    background: #37D243;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: auto;
 }
 
 
@@ -207,6 +157,61 @@ footer {
     display: block;
 }
 
+
+/* ======== Conteúdo Principal ======== */
+.container {
+    flex: 1;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #161c1b; /* Barra lateral verde (wasabi) */
+    padding: 30px;
+}
+
+h1, h2 {
+    color: #000000; /* Vermelho (atum) */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Adiciona espaçamento superior e inferior para todas as listas */
+ol, ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* ======== Imagens ======== */
+.featured-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 3px solid #000000; /* Borda verde (wasabi) */
+    /* height: 500px; */
+}
+
+/* ======== Rodapé ======== */
+footer {
+    background: #37D243;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+
 /* Ajustando cabeçalho */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -220,7 +225,7 @@ footer {
 
 
 /* ======== Responsividade ======== */
-@media (max-width: 768px) {
+@media (min-width: 0px) {
     .menu-toggle {
         display: flex;
     }
@@ -268,13 +273,3 @@ footer {
     }
 }
 
-/* Exibir menu normalmente em telas maiores */
-@media (min-width: 769px) {
-    .nav-list {
-        display: flex !important; /* Garante que o menu sempre apareça */
-    }
-
-    .menu-toggle {
-        display: none; /* Esconde o menu hamburguer */
-    }
-}
