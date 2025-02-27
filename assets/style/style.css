@@ -15,31 +15,34 @@ body {
 
 /* ======== Cabeçalho e Navegação ======== */
 header {
-   background-color: #FFAEB9;
+    background-color: #FFAEB9;
     padding: 15px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém a logo e o menu alinhados */
 }
 
 nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza os itens */
-    gap: 50px; /* Espaço entre logo e menu */
-    padding: 10px 20px;
+    justify-content: center;
+    width: 100%;
     position: relative;
 }
 
 .logo {
     position: absolute;
-    left: 20px; /* Ajuste conforme necessário */
+    left: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente */
+    transform: translateY(-50%);
 }
 
 .nav-logo {
-    height: 80px; /* Ajuste o tamanho conforme necessário */
+    height: 80px;
     border-radius: 100%;
 }
+
 
 /* Centralizando os links do menu */
 nav ul {
