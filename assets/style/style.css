@@ -95,11 +95,11 @@ p {
     margin-bottom: 15px;
 }
 
-/* Adiciona espaço entre um parágrafo e a lista logo abaixo dele */
-p + ol, p + ul {
+/* Adiciona espaçamento superior e inferior para todas as listas */
+ol, ul {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
-
 
 /* ======== Imagens ======== */
 .featured-image {
