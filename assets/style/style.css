@@ -95,6 +95,12 @@ p {
     margin-bottom: 15px;
 }
 
+/* Adiciona espaço entre um parágrafo e a lista logo abaixo dele */
+p + ol, p + ul {
+    margin-top: 15px;
+}
+
+
 /* ======== Imagens ======== */
 .featured-image {
     width: 100%;
