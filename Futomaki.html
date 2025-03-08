@@ -52,13 +52,31 @@
             <a href="/index.html" class="logo">
                 <img src="./assets/img/Untitled_logo_2_free-file.jpg" alt="Logo Sushi" class="nav-logo">
             </a>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
                 <li><a href="./index.html">História do Sushi</a></li>
                 <li><a href="./Tipos.html">Tipos de Sushi</a></li>
                 <li><a href="./Hashi.html">Como usar Hashis</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Sidebar (menu lateral) -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-menu">&times;</button>
+        <ul class="nav-list">
+            <li><a href="./index.html">História do Sushi</a></li>
+            <li><a href="./Tipos.html">Tipos de Sushi</a></li>
+            <li><a href="./Hashi.html">Como usar Hashis</a></li>
+        </ul>
+    </div>
+
+    <!-- Fundo escuro (overlay) -->
+    <div class="overlay" id="overlay"></div>
 
     <div class="container">
         <section class="content futomaki-section">
@@ -71,7 +89,7 @@
                 <img src="./assets/img/futomaki.jpg" alt="Futomaki Sushi">
             </div>
 
-            <h2>Principais Características</h2>
+            <h1>Principais Características</h1>
             <ul class="futomaki-list">
                 <li>Mais espesso que outros tipos de sushi, geralmente com 4 a 6 cm de diâmetro.</li>
                 <li>Inclui uma variedade de ingredientes como peixe, vegetais e tamago (omelete japonês).</li>
@@ -79,7 +97,7 @@
                 <li>Comum em festividades japonesas e eventos especiais.</li>
             </ul>
 
-            <h2>Curiosidades</h2>
+            <h1>Curiosidades</h1>
             <p class="futomaki-description">
                 📌 O Futomaki é muito popular durante o festival <em>Setsubun</em>, onde é consumido inteiro para trazer sorte.<br>
                 📌 Algumas versões modernas incluem cream cheese e maionese para um sabor mais ocidentalizado.<br>
@@ -91,5 +109,28 @@
     <footer>
         <p>&copy; 2025 types of sushi - Todos os direitos reservados.</p>
     </footer>
+
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const sidebar = document.getElementById('sidebar');
+        const closeMenu = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+
+        mobileMenu.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
 </body>
 </html>

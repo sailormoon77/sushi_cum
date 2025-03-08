@@ -55,13 +55,31 @@
             <a href="/index.html" class="logo">
                 <img src="./assets/img/Untitled_logo_2_free-file.jpg" alt="Logo Sushi" class="nav-logo">
             </a>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
                 <li><a href="./index.html">História do Sushi</a></li>
                 <li><a href="./Tipos.html">Tipos de Sushi</a></li>
                 <li><a href="./Hashi.html">Como usar Hashis</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Sidebar (menu lateral) -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-menu">&times;</button>
+        <ul class="nav-list">
+            <li><a href="./index.html">História do Sushi</a></li>
+            <li><a href="./Tipos.html">Tipos de Sushi</a></li>
+            <li><a href="./Hashi.html">Como usar Hashis</a></li>
+        </ul>
+    </div>
+
+    <!-- Fundo escuro (overlay) -->
+    <div class="overlay" id="overlay"></div>
 
     <div class="container">
         <section class="content uramaki-section">
@@ -74,14 +92,14 @@
                 <img src="./assets/img/urumaki.jpg" alt="Uramaki Sushi">
             </div>
 
-            <h2>Características do Uramaki</h2>
+            <h1>Características do Uramaki</h1>
             <ul class="uramaki-list">
                 <li><strong>Arroz por fora:</strong> O arroz envolve a alga, podendo ser coberto com gergelim, ovas de peixe ou outros ingredientes.</li>
                 <li><strong>Recheio variado:</strong> Pode conter peixe, pepino, abacate, cream cheese e até mesmo ingredientes inovadores.</li>
                 <li><strong>Popularidade ocidental:</strong> Tornou-se um dos tipos mais famosos de sushi fora do Japão.</li>
             </ul>
 
-            <h2>Curiosidades</h2>
+            <h1>Curiosidades</h1>
             <p class="uramaki-description">
                 📌 Foi criado nos Estados Unidos para agradar ao paladar ocidental, já que muitas pessoas estranhavam a alga visível.  
                 <br>
@@ -96,5 +114,27 @@
         <p>&copy; 2025 types of sushi - Todos os direitos reservados.</p>
     </footer>
 
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const sidebar = document.getElementById('sidebar');
+        const closeMenu = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+
+        mobileMenu.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
 </body>
 </html>

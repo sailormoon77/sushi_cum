@@ -34,6 +34,19 @@
             text-align: justify;
             line-height: 1.6;
         }
+
+         /* Ajustando as listas */
+         .nigiri-list {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .nigiri-list li {
+            margin-bottom: 8px;
+        }
+        
     </style>
 </head>
 <body>
@@ -43,13 +56,32 @@
             <a href="/index.html" class="logo">
                 <img src="./assets/img/Untitled_logo_2_free-file.jpg" alt="Logo Sushi" class="nav-logo">
             </a>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
                 <li><a href="./index.html">História do Sushi</a></li>
                 <li><a href="./Tipos.html">Tipos de Sushi</a></li>
                 <li><a href="./Hashi.html">Como usar Hashis</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Sidebar (menu lateral) -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-menu">&times;</button>
+        <ul class="nav-list">
+            <li><a href="./index.html">História do Sushi</a></li>
+            <li><a href="./Tipos.html">Tipos de Sushi</a></li>
+            <li><a href="./Hashi.html">Como usar Hashis</a></li>
+        </ul>
+    </div>
+
+    <!-- Fundo escuro (overlay) -->
+    <div class="overlay" id="overlay"></div>
+
 
     <div class="container">
         <section class="content nigiri-section">
@@ -63,15 +95,15 @@
                      alt="Nigiri Sushi">
             </div>
 
-            <h2>Tipos de Nigiri</h2>
-            <ul class="nigiri-description">
+            <h1>Tipos de Nigiri</h1>
+            <ul class="nigiri-list nigiri-description">
                 <li><strong>Maguro Nigiri:</strong> Feito com atum fresco, um dos mais populares.</li>
                 <li><strong>Sake Nigiri:</strong> Utiliza fatias de salmão cru sobre o arroz.</li>
                 <li><strong>Ebi Nigiri:</strong> Feito com camarão cozido, frequentemente servido com um toque de wasabi.</li>
                 <li><strong>Unagi Nigiri:</strong> Usa enguia grelhada, geralmente coberta com um molho adocicado.</li>
             </ul>
 
-            <h2>Curiosidades</h2>
+            <h1>Curiosidades</h1>
             <p class="nigiri-description">
                 📌 O Nigiri surgiu no Japão no início do século XIX, sendo uma das primeiras formas de sushi modernas.  
                 <br>
@@ -85,5 +117,6 @@
     <footer>
         <p>&copy; 2025 types of sushi - Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>

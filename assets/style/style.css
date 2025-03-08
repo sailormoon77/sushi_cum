@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', sans-serif;
 }
 
 body {
@@ -15,34 +15,35 @@ body {
 
 /* ======== Cabeçalho e Navegação ======== */
 header {
-   background-color: #FFAEB9;
+    background-color: #FFAEB9;
     padding: 15px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém a logo e o menu alinhados */
 }
 
 nav {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Centraliza os itens */
-    gap: 50px; /* Espaço entre logo e menu */
-    padding: 10px 20px;
+    justify-content: space-between;
+    width: 100%;
     position: relative;
 }
 
-/* Ajuste da logo */
 .logo {
-    position: absolute;
-    left: 10px; /* Mantém a logo à esquerda */
+    display: flex;
+    align-items: center;
 }
 
 .nav-logo {
-    margin-top: 10px;
     height: 80px;
     border-radius: 100%;
 }
 
 /* Centralizando os links do menu */
-nav ul {
+.nav-list {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -50,11 +51,11 @@ nav ul {
     padding: 10px 0;
 }
 
-nav ul li {
+.nav-list li {
     display: inline;
 }
 
-nav ul li a {
+.nav-list li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -63,10 +64,99 @@ nav ul li a {
     font-size: 25px;
 }
 
-nav ul li a:hover {
+.nav-list li a:hover {
     background-color: #c8568b;
     border-radius: 5px;
 }
+
+/* Menu de Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+
+/* Menu lateral (off-canvas) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido por padrão */
+    width: 250px;
+    height: 100vh;
+    background-color: #FFAEB9;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1100;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* Botão de fechar */
+.close-btn {
+    align-self: flex-end;
+    margin-right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Estilizando a lista do menu lateral */
+.sidebar .nav-list {
+    flex-direction: column;
+    display: flex;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar .nav-list li {
+    padding: 10px;
+    text-align: left;
+}
+
+.sidebar .nav-list li a {
+    color: white;
+    font-size: 22px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .nav-list li a:hover {
+    background-color: #c8568b;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+/* Fundo escuro ao abrir o menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: block;
+}
+
 
 /* ======== Conteúdo Principal ======== */
 .container {
@@ -78,6 +168,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-left: 8px solid #161c1b; /* Barra lateral verde (wasabi) */
+    padding: 30px;
 }
 
 h1, h2 {
@@ -85,9 +176,19 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
+h1{
+    font-size: 20px;
+}
+
 p {
     line-height: 1.6;
     color: #333;
+    margin-bottom: 15px;
+}
+
+/* Adiciona espaçamento superior e inferior para todas as listas */
+ol, ul {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -109,21 +210,44 @@ footer {
     margin-top: auto;
 }
 
-/* ======== Responsividade ======== */
+
+
+/* Ajustando cabeçalho */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+    .menu-toggle {
+        display: flex;
     }
 
-    .log {
-        position: static;
-        margin-bottom: 10px;
+    .nav-list {
+        display: flex;
+    }
+}
+
+
+/* ======== Responsividade ======== */
+@media (min-width: 0px) {
+    .menu-toggle {
+        display: flex;
     }
 
-    nav ul {
+    .nav-list {
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        background-color: #FFAEB9;
+        position: absolute;
+        top: 100px; /* Abaixo da navbar */
+        left: 0;
+        padding: 10px 0;
+        z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
     }
 
     .container {
@@ -136,7 +260,7 @@ footer {
         padding: 10px;
     }
 
-    nav ul {
+    .nav-list {
         gap: 5px;
     }
 
@@ -148,3 +272,4 @@ footer {
         padding: 10px;
     }
 }
+

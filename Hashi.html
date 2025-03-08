@@ -8,25 +8,38 @@
 </head>
 <body>
 
-    <style>
-
-    
-
-
-    </style>
 
     <header>
         <nav>
             <a href="/index.html" class="logo">
                 <img src="./assets/img/Untitled_logo_2_free-file.jpg" alt="Logo Sushi" class="nav-logo">
             </a>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
                 <li><a href="./index.html">História do Sushi</a></li>
                 <li><a href="./Tipos.html">Tipos de Sushi</a></li>
                 <li><a href="./Hashi.html">Como usar Hashis</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Sidebar (menu lateral) -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-menu">&times;</button>
+        <ul class="nav-list">
+            <li><a href="./index.html">História do Sushi</a></li>
+            <li><a href="./Tipos.html">Tipos de Sushi</a></li>
+            <li><a href="./Hashi.html">Como usar Hashis</a></li>
+        </ul>
+    </div>
+
+    <!-- Fundo escuro (overlay) -->
+    <div class="overlay" id="overlay"></div>
+
 
     <div class="container">
         <section class="content">
@@ -36,7 +49,7 @@
             
             <img src="https://i.pinimg.com/originals/90/74/37/907437f028c13669c009b443a671032c.gif" alt="Como segurar hashis" class="featured-image">
             
-            <h2>Passo a Passo</h2>
+            <h1>Passo a Passo</h1>
             <ol>
                 <li><strong>Posicione o primeiro hashi:</strong> Pegue um dos hashis e posicione-o entre a base do polegar e o anelar. Ele deve ficar fixo sem precisar de muito esforço.</li>
                 <li><strong>Segure o segundo hashi:</strong> Use o polegar, o indicador e o médio para segurar o segundo hashi como se fosse um lápis.</li>
@@ -44,7 +57,7 @@
                 <li><strong>Pratique:</strong> Comece pegando alimentos maiores e depois passe para pedaços menores.</li>
             </ol>
             
-            <h2>Regras de Etiqueta</h2>
+            <h1>Regras de Etiqueta</h1>
             <ul>
                 <li>Não espete a comida com os hashis.</li>
                 <li>Não aponte os hashis para outra pessoa.</li>
@@ -59,6 +72,28 @@
     <footer>
         <p>&copy; 2025 types of sushi - Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const sidebar = document.getElementById('sidebar');
+        const closeMenu = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+
+        mobileMenu.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
 
 </body>
 </html>
